@@ -1,0 +1,313 @@
+.in{
+    z-index: -1;
+    margin: 0px 0px px 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.thanks{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+}
+
+.tk{
+    margin: 47vh 0vw 0vh 45vw;
+    width: 250px;
+    height: 80px;
+    background-color: burlywood;
+}
+.btn{
+    color: white;
+    padding: 8px;
+    font-size: 20px;
+    border: 2px solid white;
+    border-radius: 14px;
+    cursor: pointer;
+}
+
+.thanks{
+    width: 100%;
+    height:100%;
+    z-index: -1;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Spartan', sans-serif;
+ }
+
+
+ h2 {
+    font-size:46px;
+    line-height:54px;
+    color:burlywood;
+} 
+
+h4 {
+    font-size:20px;
+    color:burlywood;
+}
+
+p {
+    font-size:27px;
+    color:#465b52;
+    font-weight: 500;   
+    margin: 15px 0px 20px 0px;
+    font-style: italic;
+}
+
+.policy1 {
+    padding: 40px 80px;
+}
+
+body {
+    width: 100%;
+}
+
+#policy{
+    text-align: center;
+ }
+
+ #policy .pb{
+    width:23%;
+    min-width:250px;
+    padding:10px 12px;
+    border:1px solid #cce7d0;
+    border-radius: 25px;
+    background-color: lightblue;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgb(0,0,0,0.2);
+    margin:15px 0px;
+    transition:0.2s ease;
+    position: relative ;
+}
+
+#policy .pb:hover{
+    box-shadow: 25px 25px 35px rgb(0,0,0,0.6);
+}
+
+
+#policy .pb .card{
+    text-align: start;
+    padding: 10px 0px;  
+}
+
+#policy .pb .card span{
+    color: #606063;
+    font-size: 12px;
+}
+
+#policy .pb img{
+    width:100%;
+    border-radius: 20px;
+}
+
+#policy .pb .card h5{
+    padding-top:7px;
+    color: #1a1a1a;
+    font-size:14px;
+}
+
+
+#policy  .pb .card i{
+    font-size: 12px;
+    color: rgb(243,181,25);
+}
+
+#policy  .pb .card  h4{
+    padding-top: 7px;
+    font-size:15px;
+    font-weight: 700;
+    color: #088178;
+}
+
+
+
+#policy  .pb-container{
+    display:flex;
+    justify-content:space-between;
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+
+
+
+
+
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+form {
+    max-width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+#policySelectionForm {
+    text-align: center;
+}
+
+#policySelectionForm select {
+    width: 80%;
+}
+
+#lifeInsurancePage,
+#termInsurancePage,
+#vehicleInsurancePage,
+#healthInsurancePage {
+    display: none;
+}
+
+footer{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+footer .col{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+footer .logo{
+    margin-bottom: 30px;
+}
+
+footer h4{
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+footer p{
+    font-size: 13px;
+    margin:0 0 8px 0;
+}
+
+footer a{
+    font-size: 13px;
+    text-decoration: none  ;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+.policy1 {
+    padding: 40px 80px;
+}
+
+
+.policy2{
+    margin:40px 0px;
+}
+
+#feedback{
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    background-image: url("./banner/b14.png");
+    background-color: rgb(32, 149, 149);
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+
+}
+
+#feedback input{
+    height:3.125rem;
+    padding: 0 1.25em;
+    font-size:14px;
+    width:100%;
+    border:1px solid transparent;
+    border-radius: 4px;
+    outline: none;
+}
+
+#feedback button{
+    height: 3.125rem;
+    padding: 0 1.25em;
+    font-size: 14px;
+    width: 42%;
+    border: 1px solid transparent;
+    border-radius: 15px;
+    outline: none;
+    background-color: burlywood;
+}
+
+#feedback .form{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    
+    margin-right:30px ;
+}
+
+#feedback .querry p{
+    color:rgb(27, 2, 24);
+}
+
+footer .follow{
+    margin-top:20px;
+}
+
+footer .column h4{
+    color:#041e42;
+}
+
+footer .install .row img{
+    border: 1px solid #ccc;
+    border-radius: 4px; 
+}
+
+footer .column img{
+    height:25vh;
+    width:25vh;
+    border-radius: 50%;
+}
+
+footer .install img{
+    margin:10px 0 15px 0;
+}

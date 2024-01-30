@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Policy System</title>
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Insurance Policy System</h1>
+
+<!-- Login Page -->
+<div id="loginPage">
+    <form id="loginForm">
+        <label for="password">Password:</label>
+        <input type="password" id="password" required>
+        <button type="button" onclick="authenticate()">Login</button>
+    </form>
+</div>
+
+<!-- Policy Selection Page -->
+<div id="policySelectionPage" style="display: none;">
+    <form id="policySelectionForm">
+        <label for="policyType">Select Policy Type:</label>
+        <select id="policyType" onchange="redirectForm()">
+            <option value="home"></option>
+            <option value="life">Life Insurance</option>
+            <option value="term">Term Insurance</option>
+            <option value="vehicle">Vehicle Insurance</option>
+            <option value="health">Health Insurance</option>
+        </select>
+    </form>
+</div>
+<!--this is homepage-->>
+<div id="homepage" style="display:none;">
+    <form id="homepage">
+        <h1>hello</h1>
+
+
+    </form>
+
+
+</div>
+<!-- Life Insurance Form -->
+<div id="lifeInsurancePage" style="display: none;">
+    <form id="lifeInsuranceForm">
+        <h2>Life Insurance</h2>
+        <p>Life insurance provides coverage in the event of the policyholder's death. It includes a designated beneficiary who will receive a sum of money (the benefit) in exchange for a premium.</p>
+
+        <label for="lifeCustomerName" title="Enter the name of the person who is purchasing the insurance.">Customer Name:</label>
+        <input type="text" id="lifeCustomerName" required>
+
+        <label for="lifeNominee1" title="The primary person who will receive the insurance payout in case of the policyholder's death.">Nominee 1:</label>
+        <input type="text" id="lifeNominee1" required>
+
+        <label for="lifeNominee2" title="An additional person who will receive the insurance payout if the primary nominee is not available.">Nominee 2:</label>
+        <input type="text" id="lifeNominee2" required>
+
+        <label for="lifeAnnualInvestment" title="The amount of money the policyholder will invest annually in the insurance policy.">Annual Investment (RM):</label>
+        <input type="number" id="lifeAnnualInvestment" required>
+
+        <label for="lifeInsuredAmount" title="The total amount of money that will be paid to the beneficiaries in case of the policyholder's death.">Insured Amount (RM):</label>
+        <input type="number" id="lifeInsuredAmount" required>
+
+        <label for="lifeTermYears" title="The number of years for which the insurance policy will be active.">Policy Term (Years):</label>
+        <input type="number" id="lifeTermYears" required>
+
+
+        <button type="button" onclick="submitForm('life')">Submit</button>
+    </form>
+</div>
+
+<!-- Term Insurance Form -->
+<div id="termInsurancePage" style="display: none;">
+    <form id="termInsuranceForm">
+        <h2>Term Insurance</h2>
+        <p>Term insurance is designed for saving and return purposes. It locks the invested money for a specified term, and the insured receives returns based on compound interest rates.</p>
+
+        <label for="termCustomerName" title="Enter the name of the person who is purchasing the insurance.">Customer Name:</label>
+        <input type="text" id="termCustomerName" required>
+
+        <label for="termCustomerName" title="Enter the name of the person who is purchasing the insurance.">Customer Name:</label>
+        <input type="text" id="termCustomerName" required>
+
+        <label for="termNominee" title="The person who will receive the insurance payout in case of the policyholder's death.">Nominee:</label>
+        <input type="text" id="termNominee" required>
+
+        <label for="termInvestmentAmount" title="The amount of money the policyholder will invest in the insurance policy.">Investment Amount (RM):</label>
+        <input type="number" id="termInvestmentAmount" required>
+
+        <label for="termTermYears" title="The number of years for which the investment will be locked.">Investment Term (Years):</label>
+        <input type="number" id="termTermYears" required>
+
+        <button type="button" onclick="submitForm('term')">Submit</button>
+    </form>
+</div>
+
+<!-- Vehicle Insurance Form -->
+<div id="vehicleInsurancePage" style="display: none;">
+    <form id="vehicleInsuranceForm">
+        <h2>Vehicle Insurance</h2>
+        <p>Vehicle insurance provides coverage for damage to the insured vehicle. The premium amount depends on the type of vehicle and the coverage amount.</p>
+
+        <label for="vehicleCustomerName" title="Enter the name of the person who is purchasing the insurance.">Customer Name:</label>
+        <input type="text" id="vehicleCustomerName" required>
+
+        <label for="vehicleType" title="Select the type of vehicle to be insured.">Vehicle Type:</label>
+        <select id="vehicleType">
+            <option value="twoWheeler">Two-Wheeler</option>
+            <option value="fourWheeler">Four-Wheeler</option>
+            <option value="heavyVehicle">Heavy Vehicle</option>
+        </select>
+
+        <label for="vehicleCoverageAmount" title="The amount of coverage for the insured vehicle.">Coverage Amount (RM):</label>
+        <input type="number" id="vehicleCoverageAmount" required>
+
+        <button type="button" onclick="submitForm('vehicle')">Submit</button>
+    </form>
+</div>
+
+<!-- Health Insurance Form -->
+<div id="healthInsurancePage" style="display: none;">
+    <form id="healthInsuranceForm">
+        <h2>Health Insurance</h2>
+        <p>Health insurance provides coverage for medical expenses. Choose the type of health insurance plan that best suits your needs.</p>
+
+        <label for="healthCustomerName" title="Enter the name of the person who is purchasing the insurance.">Customer Name:</label>
+        <input type="text" id="healthCustomerName" required>
+
+        <label for="healthPlan" title="Select the type of health insurance plan.">Health Plan:</label>
+        <select id="healthPlan">
+            <option value="goldPass">Gold Pass</option>
+            <option value="platinumPass">Platinum Pass</option>
+        </select>
+
+        <label for="healthAnnualPremium" title="The annual premium amount for the selected health insurance plan.">Annual Premium (RM):</label>
+        <input type="number" id="healthAnnualPremium" required>
+
+        <label for="healthCoverageAmount" title="The maximum coverage amount for medical treatment expenses.">Coverage Amount (RM):</label>
+        <input type="number" id="healthCoverageAmount" required>
+
+        <button type="button" onclick="submitForm('health')">Submit</button>
+    </form>
+</div>
+
+<!-- Dummy Payment Page -->
+<div id="dummyPaymentPage" style="display: none;">
+    <h2>Payment Page</h2>
+    <p>This is a dummy payment page. Choose your payment method:</p>
+    
+    <label for="paymentMethod">Select Payment Method:</label>
+    <select id="paymentMethod">
+        <option value="googlePay">Google Pay</option>
+        <option value="paytm">Paytm</option>
+        <option value="phonePe">PhonePe</option>
+    </select>
+
+    <button type="button" onclick="completePayment()">Complete Payment</button>
+</div>
+
+<script>
+    function authenticate() {
+        var password = document.getElementById("password").value;
+
+        if (password === "ak") {
+            document.getElementById("loginPage").style.display = "none";
+            document.getElementById("policySelectionPage").style.display = "block";
+        } else {
+            alert("Invalid password. Please try again.");
+        }
+    }
+
+    function redirectForm() {
+        var selectedPolicy = document.getElementById("policyType").value;
+
+        // Hide all form pages
+        document.getElementById("lifeInsurancePage").style.display = "none";
+        document.getElementById("termInsurancePage").style.display = "none";
+        document.getElementById("vehicleInsurancePage").style.display = "none";
+        document.getElementById("healthInsurancePage").style.display = "none";
+
+        // Show the form based on the selected policy type
+        document.getElementById(selectedPolicy + "InsurancePage").style.display = "block";
+    }
+
+    function submitForm(policyType) {
+        // Add logic to extract values from the form and handle the submission
+        var formData = {
+            policyType: policyType,
+            // Extract other form fields here
+        };
+        console.log("Form data:", formData);
+
+        // Show the dummy payment page
+        document.getElementById("dummyPaymentPage").style.display = "block";
+    }
+
+   function completePayment() {
+        var selectedPaymentMethod = document.getElementById("paymentMethod").value;
+
+        // Simulate a payment completion
+        var paymentMessage = "Payment completed successfully with " + selectedPaymentMethod + "!";
+        alert(paymentMessage);
+
+        // Redirect to the policy selection page after payment
+        document.getElementById("dummyPaymentPage").style.display = "none";
+        document.getElementById("policySelectionPage").style.display = "block";
+    }
+</script>
+
+</body>
+</html>
